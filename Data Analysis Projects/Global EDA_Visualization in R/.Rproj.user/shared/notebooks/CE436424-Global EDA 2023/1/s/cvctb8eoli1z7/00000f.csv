@@ -1,0 +1,28 @@
+"0","dataset <- read_csv(""world-data-2023.csv"")"
+"0","colnames(dataset)[2] = ""Density (P/Km2)"""
+"0","dataset[dataset == ""S�����������""]<- ""Sao Tome and Principe"""
+"0","skim(dataset)%>%"
+"0","  summary()%>%"
+"0","  print()"
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values 
+"
+"1","Name                       dataset
+"
+"1","Number of rows             195    
+"
+"1","Number of columns          35     
+"
+"1","_______________________           
+"
+"1","Column type frequency:            
+"
+"1","  character                19     
+"
+"1","  numeric                  16     
+"
+"1","________________________          
+"
+"1","Group variables            None   
+"
