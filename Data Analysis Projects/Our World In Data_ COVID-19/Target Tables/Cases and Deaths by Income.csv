@@ -1,0 +1,221 @@
+Income,year,month,total_cases,total_deaths
+"High income",2020,January,31,6
+"High income",2020,February,1042,13
+"High income",2020,March,532037,31448
+"High income",2020,April,1542660,155540
+"High income",2020,May,1497488,102226
+"High income",2020,June,1305275,38836
+"High income",2020,July,2189197,34955
+"High income",2020,August,2703509,48072
+"High income",2020,September,2497695,33575
+"High income",2020,October,4818604,49203
+"High income",2020,November,12150221,179809
+"High income",2020,December,10402787,195952
+"High income",2021,January,14308956,282789
+"High income",2021,February,6062953,160751
+"High income",2021,March,6118559,98410
+"High income",2021,April,6515307,94720
+"High income",2021,May,4585399,75388
+"High income",2021,June,1746671,29248
+"High income",2021,July,3720741,19390
+"High income",2021,August,8791357,51296
+"High income",2021,September,7221395,72702
+"High income",2021,October,7556900,92857
+"High income",2021,November,9417023,83971
+"High income",2021,December,14712494,97011
+"High income",2022,January,68626860,146224
+"High income",2022,February,36806278,138679
+"High income",2022,March,32883389,94382
+"High income",2022,April,22472295,55898
+"High income",2022,May,14687042,40875
+"High income",2022,June,10825213,23527
+"High income",2022,July,24688619,48133
+"High income",2022,August,17229118,43543
+"High income",2022,September,10193754,31320
+"High income",2022,October,11850137,41357
+"High income",2022,November,8679508,29717
+"High income",2022,December,12119710,39607
+"High income",2023,January,10165011,44263
+"High income",2023,February,3510308,39477
+"High income",2023,March,2545426,20902
+"High income",2023,April,2507632,19893
+"High income",2023,May,1450871,11660
+"High income",2023,June,758269,6703
+"High income",2023,July,1046464,4429
+"High income",2023,August,1488820,6031
+"High income",2023,September,765453,8457
+"High income",2023,October,600777,11943
+"High income",2023,November,510274,10020
+"High income",2023,December,1018807,16730
+"High income",2024,January,387141,13527
+"High income",2024,February,167444,7550
+"High income",2024,March,183196,5882
+"High income",2024,April,55408,2633
+"High income",2024,May,64625,1786
+"High income",2024,June,97517,2342
+"High income",2024,July,20251,490
+"Low income",2020,January,0,0
+"Low income",2020,February,0,0
+"Low income",2020,March,677,20
+"Low income",2020,April,5698,463
+"Low income",2020,May,35138,912
+"Low income",2020,June,43268,1375
+"Low income",2020,July,38147,1421
+"Low income",2020,August,72951,1482
+"Low income",2020,September,45033,807
+"Low income",2020,October,38169,720
+"Low income",2020,November,50112,1342
+"Low income",2020,December,64815,1523
+"Low income",2021,January,131542,2543
+"Low income",2021,February,102182,1831
+"Low income",2021,March,93025,1939
+"Low income",2021,April,105336,2546
+"Low income",2021,May,64962,2197
+"Low income",2021,June,163599,3905
+"Low income",2021,July,186665,6186
+"Low income",2021,August,181937,4095
+"Low income",2021,September,84810,2217
+"Low income",2021,October,56916,2359
+"Low income",2021,November,24039,1035
+"Low income",2021,December,127242,939
+"Low income",2022,January,354598,2347
+"Low income",2022,February,44813,1425
+"Low income",2022,March,14501,1270
+"Low income",2022,April,7724,129
+"Low income",2022,May,13327,68
+"Low income",2022,June,31845,142
+"Low income",2022,July,27851,169
+"Low income",2022,August,18601,90
+"Low income",2022,September,13177,89
+"Low income",2022,October,8350,60
+"Low income",2022,November,6712,56
+"Low income",2022,December,8685,43
+"Low income",2023,January,13717,62
+"Low income",2023,February,6192,47
+"Low income",2023,March,3502,33
+"Low income",2023,April,7114,27
+"Low income",2023,May,7495,28
+"Low income",2023,June,6576,17
+"Low income",2023,July,4224,14
+"Low income",2023,August,2187,13
+"Low income",2023,September,1576,5
+"Low income",2023,October,2494,15
+"Low income",2023,November,1851,15
+"Low income",2023,December,1727,11
+"Low income",2024,January,1681,10
+"Low income",2024,February,1456,2
+"Low income",2024,March,1629,13
+"Low income",2024,April,1563,4
+"Low income",2024,May,849,1
+"Low income",2024,June,78,0
+"Low income",2024,July,0,0
+"Lower middle income",2020,January,7,0
+"Lower middle income",2020,February,60,6
+"Lower middle income",2020,March,44063,2875
+"Lower middle income",2020,April,137913,6732
+"Lower middle income",2020,May,436237,11543
+"Lower middle income",2020,June,861752,22793
+"Lower middle income",2020,July,1400238,32647
+"Lower middle income",2020,August,2874739,50742
+"Lower middle income",2020,September,3078132,48911
+"Lower middle income",2020,October,2720775,44038
+"Lower middle income",2020,November,3146685,56071
+"Lower middle income",2020,December,2094718,38537
+"Lower middle income",2021,January,2091153,40690
+"Lower middle income",2021,February,1376388,26463
+"Lower middle income",2021,March,2162560,26460
+"Lower middle income",2021,April,7014438,68123
+"Lower middle income",2021,May,12914863,182988
+"Lower middle income",2021,June,3732698,100147
+"Lower middle income",2021,July,4037828,81778
+"Lower middle income",2021,August,5930759,141015
+"Lower middle income",2021,September,3573878,65411
+"Lower middle income",2021,October,2688725,53110
+"Lower middle income",2021,November,1628589,45250
+"Lower middle income",2021,December,1397070,36654
+"Lower middle income",2022,January,10138966,38045
+"Lower middle income",2022,February,6756330,47329
+"Lower middle income",2022,March,6790054,26591
+"Lower middle income",2022,April,1880002,7277
+"Lower middle income",2022,May,355389,4266
+"Lower middle income",2022,June,433266,1034
+"Lower middle income",2022,July,1528883,3755
+"Lower middle income",2022,August,1660090,5697
+"Lower middle income",2022,September,591239,3854
+"Lower middle income",2022,October,456166,3832
+"Lower middle income",2022,November,282687,3801
+"Lower middle income",2022,December,199473,2028
+"Lower middle income",2023,January,121536,1060
+"Lower middle income",2023,February,59701,1227
+"Lower middle income",2023,March,128692,1240
+"Lower middle income",2023,April,427483,2682
+"Lower middle income",2023,May,205899,1256
+"Lower middle income",2023,June,65390,365
+"Lower middle income",2023,July,24957,173
+"Lower middle income",2023,August,11669,199
+"Lower middle income",2023,September,14653,196
+"Lower middle income",2023,October,22365,1539
+"Lower middle income",2023,November,12240,174
+"Lower middle income",2023,December,38713,227
+"Lower middle income",2024,January,31124,269
+"Lower middle income",2024,February,8776,103
+"Lower middle income",2024,March,9514,98
+"Lower middle income",2024,April,4377,37
+"Lower middle income",2024,May,3915,30
+"Lower middle income",2024,June,2986,19
+"Lower middle income",2024,July,415,0
+"Upper middle income",2020,January,1995,56
+"Upper middle income",2020,February,75112,2390
+"Upper middle income",2020,March,34410,1451
+"Upper middle income",2020,April,350421,16089
+"Upper middle income",2020,May,1192729,69623
+"Upper middle income",2020,June,1722602,81304
+"Upper middle income",2020,July,2442730,93449
+"Upper middle income",2020,August,3606542,119058
+"Upper middle income",2020,September,2514200,76662
+"Upper middle income",2020,October,2602920,62727
+"Upper middle income",2020,November,4210935,86400
+"Upper middle income",2020,December,4687650,93351
+"Upper middle income",2021,January,5530175,157933
+"Upper middle income",2021,February,3467035,114116
+"Upper middle income",2021,March,4477828,126498
+"Upper middle income",2021,April,5954665,167645
+"Upper middle income",2021,May,6154054,179908
+"Upper middle income",2021,June,5170537,125240
+"Upper middle income",2021,July,5447895,126768
+"Upper middle income",2021,August,7282230,148919
+"Upper middle income",2021,September,4579740,105901
+"Upper middle income",2021,October,4770437,98560
+"Upper middle income",2021,November,3485650,74315
+"Upper middle income",2021,December,3118585,62886
+"Upper middle income",2022,January,15309661,81388
+"Upper middle income",2022,February,15981691,93682
+"Upper middle income",2022,March,6299524,53645
+"Upper middle income",2022,April,2529290,22400
+"Upper middle income",2022,May,3615131,15801
+"Upper middle income",2022,June,3803000,13447
+"Upper middle income",2022,July,6667190,20617
+"Upper middle income",2022,August,3907034,16226
+"Upper middle income",2022,September,3348227,10838
+"Upper middle income",2022,October,2728802,10346
+"Upper middle income",2022,November,1506238,6661
+"Upper middle income",2022,December,54719070,16243
+"Upper middle income",2023,January,37360570,40522
+"Upper middle income",2023,February,1274005,55344
+"Upper middle income",2023,March,956858,4501
+"Upper middle income",2023,April,674338,4229
+"Upper middle income",2023,May,231757,2433
+"Upper middle income",2023,June,90363,1150
+"Upper middle income",2023,July,56003,684
+"Upper middle income",2023,August,39954,412
+"Upper middle income",2023,September,59098,237
+"Upper middle income",2023,October,138152,526
+"Upper middle income",2023,November,254585,517
+"Upper middle income",2023,December,558499,1097
+"Upper middle income",2024,January,219074,1178
+"Upper middle income",2024,February,165777,682
+"Upper middle income",2024,March,160460,732
+"Upper middle income",2024,April,85408,387
+"Upper middle income",2024,May,65754,305
+"Upper middle income",2024,June,80258,293
+"Upper middle income",2024,July,13743,40
