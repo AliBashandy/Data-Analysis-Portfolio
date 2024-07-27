@@ -6,7 +6,6 @@ SELECT *
 FROM owid_covid_data
 ;
 #+----------------------------------------------------------------------------------------------------------+#
-#+----------------------------------------------------------------------------------------------------------+#
 
 # Check for duplicates and Drop them
 With duplicate_checker AS(
@@ -43,9 +42,8 @@ FROM
 where row_num > 1
 ;
 # No rows returned so no duplicates found
+#+----------------------------------------------------------------------------------------------------------+#
 
-#+----------------------------------------------------------------------------------------------------------+#
-#+----------------------------------------------------------------------------------------------------------+#
 # Format Date column
 Select `date`,
 str_to_date(`date`,'%Y-%m-%d')
@@ -57,7 +55,7 @@ SET `date`= str_to_date(`date`,'%Y-%m-%d')
 Alter TABLE owid_covid_clone
 MODIFY COLUMN `date` DATE;
 #+----------------------------------------------------------------------------------------------------------+#
-#+----------------------------------------------------------------------------------------------------------+#
+
 # To change the empty cells in continent columns to NULL
 SELECT continent,
 continent = NULL
@@ -72,21 +70,27 @@ WHERE continent is not NULL
 AND length(continent) = 0 
 ;
 #+----------------------------------------------------------------------------------------------------------+#
-#+----------------------------------------------------------------------------------------------------------+#
+
 Select *
 FROM owid_covid_clone;
 #+----------------------------------------------------------------------------------------------------------+#
-#+----------------------------------------------------------------------------------------------------------+#
-# Due to late records of vaccines, all empty cells of vaccibe related columns will be filled with null
 
-UPDATE owid_covid_clone 
-SET 
-    total_vaccinations = NULL,
-    people_vaccinated = NULL,
-    people_fully_vaccinated = NULL,
-    total_boosters = NULL
-WHERE
-    LENGTH(total_vaccinations) = 0
-AND LENGTH(people_vaccinated) = 0
-AND LENGTH(people_fully_vaccinated) = 0
-AND LENGTH(total_boosters) = 0
+# Create table focusing on Cases and Deaths cases
+CREATE TABLE  owid_covid_cases_deaths
+SELECT
+	 iso_code, continent, location,population, population_density,
+		`date`, total_cases, new_cases, total_deaths,new_deaths, stringency_index
+	FROM owid_covid_clone
+;
+#+----------------------------------------------------------------------------------------------------------+#
+
+# Create table focusing on vaccination
+DROP TABLE IF Exists owid_covid_vaccination;
+CREATE TABLE  owid_covid_vaccination
+SELECT
+	 iso_code, continent, location,population, population_density,
+		`date`, new_vaccinations_smoothed, total_vaccinations, people_vaccinated, people_fully_vaccinated,
+		total_boosters
+	FROM owid_covid_clone
+;
+

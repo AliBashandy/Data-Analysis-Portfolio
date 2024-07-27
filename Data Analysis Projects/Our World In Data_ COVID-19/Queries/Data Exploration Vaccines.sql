@@ -1,24 +1,62 @@
-## Looking at Vaccination status 
+SELECT * 
+FROM owid_covid19.owid_covid_clone
+;
+#________________________________________________________________________#
+#01_Checking total vaccination
 
-SELECT * FROM owid_covid19.owid_covid_clone;
-# Calculation of new vaccination from total_vaccination coulumn gave more accurate numbers
-# Columns were recognised as varchar which can make issues during calculations so all of them converted to double
-SELECT 
-    location,
-    YEAR(`date`) AS `year`,
-    MONTH(`date`) AS `month`,
-    MAX(convert(population, double)) AS population,
-    MAX(convert(people_vaccinated, double)) AS people_vaccinated ,
-    MAX(convert(people_fully_vaccinated, double)) AS people_fully_vaccinated ,
-    MAX(convert(total_boosters, double)) AS total_boosters,
-    MAX(convert(total_vaccinations, double)) AS total_vaccinations ,
-    MAX(convert(total_vaccinations, double)) - LAG(MAX(convert(total_vaccinations, double)),1,0) OVER(PARTITION BY location ORDER BY location, YEAR(`date`), MONTH(`date`))As new_vaccination
-    FROM owid_covid19.owid_covid_clone
-    WHERE continent IS NOT NULL
-    AND people_vaccinated Is NOT NULL
-    #AND people_fully_vaccinated Is NOT NULL
-    #AND total_boosters Is NOT NULL
-    AND total_vaccinations Is NOT NULL
-GROUP BY location , `year` , `month`
-ORDER BY location , `year` , `month`
-        ;
+## Checking the total from new_vaccinations_smoothed column
+#---------------------------------------------------- 
+SELECT sum(convert(new_vaccinations_smoothed,double))
+ FROM owid_covid19.owid_covid_clone
+ WHERE continent is not null
+ 
+ union
+ 
+ ## Checking the total from total_vaccinations column
+ #----------------------------------------------------
+ SELECT SUM(tb1.vac)
+ FROM(
+SELECT ## Checking the total from total_vaccinations column 
+MAX(convert(total_vaccinations,double)) vac
+FROM owid_covid19.owid_covid_clone
+WHERE continent is not null
+GROUP BY location) tb1
+;
+## The results are not the same so i will make new smooth column from total_vaccinations column
+#________________________________________________________________________# 
+ 
+#02_Checking people vaccinated
+
+Select SUM(tb1.ppl_vac)
+FROM(
+ SELECT location, MAX(convert(people_vaccinated,double)) AS ppl_vac
+ FROM owid_covid19.owid_covid_clone
+ WHERE continent is not null
+ GROUP BY location) tb1
+ 
+ UNION
+ 
+ SELECT sum(convert(new_people_vaccinated_smoothed,double))
+ FROM owid_covid19.owid_covid_clone
+ WHERE continent is not null;
+ ## The results are not the same so i will make new smooth column from people_vaccinated column
+ 
+ SELECT SUM(tb1.ful_vac)
+ FROM(
+ SELECT MAX(convert(people_fully_vaccinated,double)) ful_vac
+ FROM owid_covid19.owid_covid_clone
+ WHERE continent is not null
+ GROUP BY location)tb1
+ ;
+ # There is no smothed values column for this so it will be created for reporting usage
+ 
+ #03_Checking total boosters
+ SELECT SUM(tb1.t_boost)
+ FROM(
+ SELECT MAX(convert(total_boosters,double)) t_boost
+ FROM owid_covid19.owid_covid_clone
+ WHERE continent is not null
+ GROUP BY location)tb1
+ ;
+# There is no smothed values column for this so it will be created for reporting usage
+ 

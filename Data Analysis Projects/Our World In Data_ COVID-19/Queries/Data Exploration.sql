@@ -158,3 +158,19 @@ ORDER BY location , `year` , FIELD(`month`,
         'December')
 ;
 
+
+
+
+SELECT 
+	MAX(total_cases),
+    SUM(total_deaths),
+    MAX(total_cases),
+    MAX(total_deaths),
+    SUM(new_cases),
+    SUM(new_deaths)
+FROM
+    owid_covid_clone
+WHERE
+    continent IS NOT NULL
+;
+
