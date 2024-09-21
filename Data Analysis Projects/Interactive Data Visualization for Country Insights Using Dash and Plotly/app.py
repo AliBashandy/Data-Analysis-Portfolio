@@ -151,7 +151,7 @@ def update_map(selected_metric, selected_years):
               }
    
     # Set the title based on the selected metric
-    title = titles.get(selected_metric, f"Select a Year and a Metric to visualize<br>How People Thrive Around the World")
+    title = titles.get(selected_metric, f"Select a Year and a Metric to visualize How People Thrive Around the World")
     
     # Creating the map 
     fig = px.choropleth(
@@ -176,7 +176,7 @@ def update_map(selected_metric, selected_years):
     title={
         'font': {
             'family': "'Times New Roman', Times, serif",
-            'size': 24,
+            'size': 20,
             'color': "black"
         },
         'x': 0  # Left the title
@@ -218,7 +218,7 @@ def update_insights(selected_metric, selected_years):
     # Set the metric name based on the selected metric
     selected_metric_title = new_metric_name.get(selected_metric,selected_metric)
     insights = [
-        html.H3(f"In {selected_years}, {highest['country']} had the highest {selected_metric_title} with a value of {highest[selected_metric]} while {lowest['country']} had the lowest {selected_metric_title} with a value of {lowest[selected_metric]:.2f},"),
+        html.H3(f"In {selected_years}, {highest['country']} had the highest {selected_metric_title} with a value of {highest[selected_metric]:.2f} while {lowest['country']} had the lowest {selected_metric_title} with a value of {lowest[selected_metric]:.2f},"),
     ]
     return insights
 
@@ -243,7 +243,7 @@ def update_top_countries(selected_metric, selected_years):
     
     top_countries = filtered_df.nlargest(10, selected_metric)
 
-    top_countries_list = html.Ol([html.Li(f"{row['country']}:{row[selected_metric]}")
+    top_countries_list = html.Ol([html.Li(f"{row['country']}:{row[selected_metric]:.2f}")
                                   for _, row in top_countries.iterrows()])
     
     return html.Div([
@@ -270,7 +270,7 @@ def update_bottom_countries(selected_metric, selected_years):
         return [html.H3(f"Please Select a metric to get the Bottom 10 Countries")]
     
     bottom_countries = filtered_df.nsmallest(10, selected_metric)
-    bottom_countries_list = html.Ol([html.Li(f"{row['country']}:{row[selected_metric]}")
+    bottom_countries_list = html.Ol([html.Li(f"{row['country']}:{row[selected_metric]:.2f}")
                                   for _, row in bottom_countries.iterrows()])
     return html.Div([
     html.Div([html.H3("Bottom 10 Countries"),bottom_countries_list], className='top-bottom-section')
@@ -283,7 +283,7 @@ def update_bottom_countries(selected_metric, selected_years):
 )
 def display_country_chart(clickData, selected_metric):
     if clickData is None or selected_metric is None:
-        return {'data': [], 'layout': {'title': 'Choose a metric and Click on the map to know how your country doing over the years'}}
+        return {'data': [], 'layout': {'title': 'Choose a metric and Click on the map to know how your country<br> doing over the years'}}
     
     country = clickData['points'][0]['location']
     filtered_df = df[df['country'] == country]
@@ -399,7 +399,7 @@ def display_country_insights(clickData, selected_metric, selected_years):
         return [html.H3('Country Insights: please select a country on the map')]
 
     country = clickData['points'][0]['location']
-    filtered_df = df[df['country'] == country]
+    filtered_df = df[(df['country'] == country) & (df['year'] == selected_years)]
     if filtered_df.empty:
         return [html.H3(f'No data available for {country}')]
 
@@ -419,7 +419,7 @@ def display_country_insights(clickData, selected_metric, selected_years):
     selected_metric_title = new_metric_name.get(selected_metric, selected_metric)
 
     country_insights = [
-        html.H3(f"In [{filtered_df['year'].values[0]}], {country} had a {selected_metric_title} score of [{country_metric:.2f}], "
+        html.H3(f"In [{selected_years}], {country} had a {selected_metric_title} score of [{country_metric:.2f}], "
                 f"while the average score was [{mean_metric:.2f}] and the highest score was [{max_metric:.2f}].")
     ]
 
